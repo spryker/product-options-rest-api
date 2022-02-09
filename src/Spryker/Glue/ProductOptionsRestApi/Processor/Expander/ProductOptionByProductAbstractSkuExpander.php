@@ -26,15 +26,15 @@ class ProductOptionByProductAbstractSkuExpander implements ProductOptionByProduc
     }
 
     /**
-     * @param array<\Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface> $resources
+     * @param array<\Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceInterface> $restResources
      * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
      *
      * @return void
      */
-    public function addResourceRelationships(array $resources, RestRequestInterface $restRequest): void
+    public function addResourceRelationships(array $restResources, RestRequestInterface $restRequest): void
     {
         $productAbstractSkus = [];
-        foreach ($resources as $restResource) {
+        foreach ($restResources as $restResource) {
             $productAbstractSkus[] = $restResource->getId();
         }
 
@@ -43,7 +43,7 @@ class ProductOptionByProductAbstractSkuExpander implements ProductOptionByProduc
             $restRequest->getMetadata()->getLocale(),
             $restRequest->getSort(),
         );
-        foreach ($resources as $restResource) {
+        foreach ($restResources as $restResource) {
             if (!isset($productOptionRestResources[$restResource->getId()])) {
                 continue;
             }
