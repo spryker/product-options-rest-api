@@ -39,11 +39,6 @@ class ProductOptionsRestApiDependencyProvider extends AbstractBundleDependencyPr
      */
     public const CLIENT_CURRENCY = 'CLIENT_CURRENCY';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -55,11 +50,6 @@ class ProductOptionsRestApiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addProductOptionStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_OPTION_STORAGE, function (Container $container) {
@@ -71,11 +61,6 @@ class ProductOptionsRestApiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addProductStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_STORAGE, function (Container $container) {
@@ -87,11 +72,6 @@ class ProductOptionsRestApiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addGlossaryStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_GLOSSARY_STORAGE, function (Container $container) {
@@ -103,11 +83,6 @@ class ProductOptionsRestApiDependencyProvider extends AbstractBundleDependencyPr
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addCurrencyClient(Container $container): Container
     {
         $container->set(static::CLIENT_CURRENCY, function (Container $container) {

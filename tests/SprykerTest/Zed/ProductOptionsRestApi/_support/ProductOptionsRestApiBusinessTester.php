@@ -49,9 +49,6 @@ class ProductOptionsRestApiBusinessTester extends Actor
      */
     public const ID_PRODUCT_OPTION_VALUE = '1';
 
-    /**
-     * @return \Generated\Shared\Transfer\CartItemRequestTransfer
-     */
     public function buildCartItemRequestTransferWithOptions(): CartItemRequestTransfer
     {
         $productOptionBuilder = new ProductOptionBuilder(['idProductOptionValue' => static::ID_PRODUCT_OPTION_VALUE]);
@@ -61,17 +58,11 @@ class ProductOptionsRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CartItemRequestTransfer
-     */
     public function buildCartItemRequestTransferWithoutOptions(): CartItemRequestTransfer
     {
         return (new CartItemRequestBuilder(['sku' => static::PRODUCT_CONCRETE_SKU]))->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PersistentCartChangeTransfer
-     */
     public function buildPersistentCartChangeTransfer(): PersistentCartChangeTransfer
     {
         $itemBuilder = new ItemBuilder(['sku' => static::PRODUCT_CONCRETE_SKU]);
@@ -81,9 +72,6 @@ class ProductOptionsRestApiBusinessTester extends Actor
             ->build();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\PersistentCartChangeTransfer
-     */
     public function buildPersistentCartChangeTransferWithDifferentSku(): PersistentCartChangeTransfer
     {
         $itemBuilder = new ItemBuilder(['sku' => static::DIFFERENT_PRODUCT_CONCRETE_SKU]);

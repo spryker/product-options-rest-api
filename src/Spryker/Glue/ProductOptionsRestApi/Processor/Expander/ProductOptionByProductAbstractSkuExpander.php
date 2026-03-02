@@ -17,9 +17,6 @@ class ProductOptionByProductAbstractSkuExpander implements ProductOptionByProduc
      */
     protected $productOptionStorageReader;
 
-    /**
-     * @param \Spryker\Glue\ProductOptionsRestApi\Processor\Reader\ProductOptionStorageReaderInterface $productOptionStorageReader
-     */
     public function __construct(ProductOptionStorageReaderInterface $productOptionStorageReader)
     {
         $this->productOptionStorageReader = $productOptionStorageReader;

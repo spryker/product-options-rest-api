@@ -61,12 +61,6 @@ class ProductOptionStorageReader implements ProductOptionStorageReaderInterface
      */
     protected $productOptionRestResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\ProductOptionsRestApi\Dependency\Client\ProductOptionsRestApiToProductStorageClientInterface $productStorageClient
-     * @param \Spryker\Glue\ProductOptionsRestApi\Dependency\Client\ProductOptionsRestApiToProductOptionStorageClientInterface $productOptionStorageClient
-     * @param \Spryker\Glue\ProductOptionsRestApi\Processor\Translator\ProductOptionTranslatorInterface $productOptionTranslator
-     * @param \Spryker\Glue\ProductOptionsRestApi\Processor\RestResponseBuilder\ProductOptionRestResponseBuilderInterface $productOptionRestResponseBuilder
-     */
     public function __construct(
         ProductOptionsRestApiToProductStorageClientInterface $productStorageClient,
         ProductOptionsRestApiToProductOptionStorageClientInterface $productOptionStorageClient,
@@ -166,11 +160,6 @@ class ProductOptionStorageReader implements ProductOptionStorageReaderInterface
         return $this->getProductOptionIdsGroupedByProductOptionSku($productAbstractOptionStorageTransfer);
     }
 
-    /**
-     * @param string $productConcreteSku
-     *
-     * @return int|null
-     */
     protected function findIdProductAbstractByProductConcreteSku(string $productConcreteSku): ?int
     {
         $productConcreteStorageDataItem = $this->productStorageClient->findProductConcreteStorageDataByMappingForCurrentLocale(

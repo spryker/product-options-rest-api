@@ -22,11 +22,5 @@ interface ProductOptionTranslatorInterface
         string $localeName
     ): array;
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function translateItemTransfer(ItemTransfer $itemTransfer, string $localeName): ItemTransfer;
 }

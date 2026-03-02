@@ -22,9 +22,6 @@ class QuoteRequestItemExpander implements QuoteRequestItemExpanderInterface
      */
     protected $glossaryStorageClient;
 
-    /**
-     * @param \Spryker\Glue\ProductOptionsRestApi\Dependency\Client\ProductOptionsRestApiToGlossaryStorageClientInterface $glossaryStorageClient
-     */
     public function __construct(ProductOptionsRestApiToGlossaryStorageClientInterface $glossaryStorageClient)
     {
         $this->glossaryStorageClient = $glossaryStorageClient;
@@ -108,12 +105,6 @@ class QuoteRequestItemExpander implements QuoteRequestItemExpanderInterface
         return $restQuoteRequestsAttributesTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteRequestTransfer $quoteRequestTransfer
-     * @param \Generated\Shared\Transfer\RestQuoteRequestsAttributesTransfer $restQuoteRequestsAttributesTransfer
-     *
-     * @return bool
-     */
     protected function areTransfersValid(
         QuoteRequestTransfer $quoteRequestTransfer,
         RestQuoteRequestsAttributesTransfer $restQuoteRequestsAttributesTransfer
@@ -123,11 +114,6 @@ class QuoteRequestItemExpander implements QuoteRequestItemExpanderInterface
             && $this->isRestQuoteRequestsAttributesTransferValid($restQuoteRequestsAttributesTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestQuoteRequestsAttributesTransfer $restQuoteRequestsAttributesTransfer
-     *
-     * @return bool
-     */
     protected function isRestQuoteRequestsAttributesTransferValid(RestQuoteRequestsAttributesTransfer $restQuoteRequestsAttributesTransfer): bool
     {
         return $restQuoteRequestsAttributesTransfer->getShownVersion() !== null
@@ -164,12 +150,6 @@ class QuoteRequestItemExpander implements QuoteRequestItemExpanderInterface
         return $indexedRestQuoteRequestsAttributesTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\RestQuoteRequestItemTransfer $restQuoteRequestItemTransfer
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestQuoteRequestItemTransfer
-     */
     protected function addSelectedProductOptions(
         RestQuoteRequestItemTransfer $restQuoteRequestItemTransfer,
         ItemTransfer $itemTransfer

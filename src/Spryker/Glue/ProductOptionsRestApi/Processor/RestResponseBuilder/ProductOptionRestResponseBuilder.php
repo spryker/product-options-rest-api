@@ -36,12 +36,6 @@ class ProductOptionRestResponseBuilder implements ProductOptionRestResponseBuild
      */
     protected $currencyClient;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ProductOptionsRestApi\Processor\Mapper\ProductOptionMapperInterface $productOptionMapper
-     * @param \Spryker\Glue\ProductOptionsRestApi\Processor\Sorter\ProductOptionSorterInterface $productOptionSorter
-     * @param \Spryker\Glue\ProductOptionsRestApi\Dependency\Client\ProductOptionsRestApiToCurrencyClientInterface $currencyClient
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ProductOptionMapperInterface $productOptionMapper,
@@ -151,13 +145,6 @@ class ProductOptionRestResponseBuilder implements ProductOptionRestResponseBuild
         return $restResources;
     }
 
-    /**
-     * @param string $parentResourceType
-     * @param string $parentResourceId
-     * @param string $productOptionSku
-     *
-     * @return string
-     */
     protected function generateSelfLink(string $parentResourceType, string $parentResourceId, string $productOptionSku): string
     {
         return sprintf(

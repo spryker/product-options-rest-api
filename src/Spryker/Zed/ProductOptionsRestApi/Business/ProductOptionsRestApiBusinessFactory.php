@@ -16,9 +16,6 @@ use Spryker\Zed\ProductOptionsRestApi\Business\Mapper\ProductOptionMapperInterfa
  */
 class ProductOptionsRestApiBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\ProductOptionsRestApi\Business\Mapper\ProductOptionMapperInterface
-     */
     public function createProductOptionMapper(): ProductOptionMapperInterface
     {
         return new ProductOptionMapper();

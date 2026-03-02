@@ -27,17 +27,11 @@ class ProductOptionsRestApiFacadeTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
     }
 
-    /**
-     * @return void
-     */
     public function testMapCartItemRequestTransferToPersistentCartChangeTransferWithOptions(): void
     {
         // Arrange
@@ -70,9 +64,6 @@ class ProductOptionsRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapCartItemRequestTransferToPersistentCartChangeTransferWithoutOptions(): void
     {
         // Arrange
@@ -95,9 +86,6 @@ class ProductOptionsRestApiFacadeTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testMapCartItemRequestTransferToPersistentCartChangeTransferWithDifferentSku(): void
     {
         // Arrange

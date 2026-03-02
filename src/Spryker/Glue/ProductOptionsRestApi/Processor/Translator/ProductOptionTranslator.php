@@ -18,9 +18,6 @@ class ProductOptionTranslator implements ProductOptionTranslatorInterface
      */
     protected $glossaryStorageClient;
 
-    /**
-     * @param \Spryker\Glue\ProductOptionsRestApi\Dependency\Client\ProductOptionsRestApiToGlossaryStorageClientInterface $glossaryStorageClient
-     */
     public function __construct(ProductOptionsRestApiToGlossaryStorageClientInterface $glossaryStorageClient)
     {
         $this->glossaryStorageClient = $glossaryStorageClient;
@@ -51,12 +48,6 @@ class ProductOptionTranslator implements ProductOptionTranslatorInterface
         return $productAbstractOptionStorageTransfers;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function translateItemTransfer(ItemTransfer $itemTransfer, string $localeName): ItemTransfer
     {
         $glossaryStorageKeys = $this->getGlossaryStorageKeysFromItemTransfer($itemTransfer);

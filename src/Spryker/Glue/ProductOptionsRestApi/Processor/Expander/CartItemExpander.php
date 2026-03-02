@@ -19,20 +19,11 @@ class CartItemExpander implements CartItemExpanderInterface
      */
     protected $productOptionStorageReader;
 
-    /**
-     * @param \Spryker\Glue\ProductOptionsRestApi\Processor\Reader\ProductOptionStorageReaderInterface $productOptionStorageReader
-     */
     public function __construct(ProductOptionStorageReaderInterface $productOptionStorageReader)
     {
         $this->productOptionStorageReader = $productOptionStorageReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CartItemRequestTransfer $cartItemRequestTransfer
-     * @param \Generated\Shared\Transfer\RestCartItemsAttributesTransfer $restCartItemsAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\CartItemRequestTransfer
-     */
     public function expand(
         CartItemRequestTransfer $cartItemRequestTransfer,
         RestCartItemsAttributesTransfer $restCartItemsAttributesTransfer
