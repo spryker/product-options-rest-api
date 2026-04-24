@@ -1,0 +1,65 @@
+resource:
+    name: ProductOptions
+    shortName: product-options
+    description: 'Storefront product options'
+
+    provider: Spryker\Glue\ProductOptionsRestApi\Api\Storefront\Provider\ProductOptionsStorefrontProvider
+
+    paginationEnabled: false
+
+    operations:
+        - type: GetCollection
+          uriTemplate: /abstract-products/{abstractProductSku}/product-options
+          description: 'Retrieve product options for an abstract product'
+
+    includableIn:
+        - resource: AbstractProducts
+          relationshipName: product-options
+          uriVariableMappings:
+              sku: abstractProductSku
+
+    properties:
+        sku:
+            type: string
+            identifier: true
+            writable: false
+            readable: true
+            description: 'Unique SKU of the product option value'
+            openapiContext:
+                example: 'OP_gift_wrapping'
+
+        optionGroupName:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Translated name of the option group'
+            openapiContext:
+                example: 'Gift wrapping'
+
+        optionName:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Translated name of the option value'
+            openapiContext:
+                example: 'Standard'
+
+        price:
+            type: integer
+            writable: false
+            readable: true
+            required: false
+            description: 'Price of the option in the active currency'
+            openapiContext:
+                example: 500
+
+        currencyIsoCode:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'ISO code of the active currency'
+            openapiContext:
+                example: 'EUR'
