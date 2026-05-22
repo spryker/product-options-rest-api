@@ -12,12 +12,6 @@ resource:
           uriTemplate: /abstract-products/{abstractProductSku}/product-options
           description: 'Retrieve product options for an abstract product'
 
-    includableIn:
-        - resource: AbstractProducts
-          relationshipName: product-options
-          uriVariableMappings:
-              sku: abstractProductSku
-
     properties:
         sku:
             type: string
