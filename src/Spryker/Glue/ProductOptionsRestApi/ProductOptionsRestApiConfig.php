@@ -12,6 +12,8 @@ use Spryker\Glue\Kernel\AbstractBundleConfig;
 class ProductOptionsRestApiConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\ProductsRestApi\ProductsRestApiConfig::RESOURCE_ABSTRACT_PRODUCTS
      *
      * @var string
@@ -19,6 +21,8 @@ class ProductOptionsRestApiConfig extends AbstractBundleConfig
     public const RESOURCE_ABSTRACT_PRODUCTS = 'abstract-products';
 
     /**
+     * @api
+     *
      * @uses \Spryker\Glue\ProductsRestApi\ProductsRestApiConfig::RESOURCE_CONCRETE_PRODUCTS
      *
      * @var string
@@ -26,6 +30,8 @@ class ProductOptionsRestApiConfig extends AbstractBundleConfig
     public const RESOURCE_CONCRETE_PRODUCTS = 'concrete-products';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const RESOURCE_PRODUCT_OPTIONS = 'product-options';
