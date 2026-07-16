@@ -3,6 +3,24 @@ resource:
     shortName: items
 
     properties:
+        calculations:
+            type: object
+            objectName: Calculations
+            writable: false
+            readable: true
+            required: false
+            properties:
+                unitProductOptionPriceAggregation:
+                    type: integer
+                    description: 'Aggregated product option price per unit in cents.'
+                    openapiContext:
+                        example: 0
+                sumProductOptionPriceAggregation:
+                    type: integer
+                    description: 'Aggregated product option price for the sum in cents.'
+                    openapiContext:
+                        example: 0
+
         selectedProductOptions:
             type: array
             writable: false
