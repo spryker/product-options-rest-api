@@ -8,9 +8,19 @@ resource:
     paginationEnabled: false
 
     operations:
+        # An unknown or option-less abstract product yields an empty collection rather than a 404 —
+        # the provider never distinguishes the two, so 200 is the only response it can produce.
         - type: GetCollection
           uriTemplate: /abstract-products/{abstractProductSku}/product-options
           description: 'Retrieve product options for an abstract product'
+          uriVariables:
+              abstractProductSku:
+                  fromClass: AbstractProductsStorefrontResource
+          openapiContext:
+              summary: 'Get product options of an abstract product'
+              responses:
+                  200:
+                      description: 'Product options returned.'
 
     properties:
         sku:
