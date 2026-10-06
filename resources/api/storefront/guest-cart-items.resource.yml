@@ -28,6 +28,22 @@ resource:
             required: false
             description: 'Enriched product-option payloads on the guest-cart item: option group, value, and price. Set by the response mapper from the persisted cart item.'
             openapiContext:
+                items:
+                    type: object
+                    required:
+                        - optionGroupName
+                        - optionName
+                        - sku
+                        - price
+                    properties:
+                        optionGroupName:
+                            type: string
+                        optionName:
+                            type: string
+                        sku:
+                            type: string
+                        price:
+                            type: integer
                 example:
                     - optionGroupName: 'Warranty'
                       optionName: 'Two (2) year limited warranty'
@@ -37,6 +53,7 @@ resource:
         productOptions:
             type: array
             writable: true
+            writableOn: ['Post']
             readable: false
             required: false
             description: 'Product options chosen by the customer on guest-cart-item create/update. Each entry carries the option-value `sku`; the cart item is recalculated with the matching `idProductOptionValue` resolved server-side.'
