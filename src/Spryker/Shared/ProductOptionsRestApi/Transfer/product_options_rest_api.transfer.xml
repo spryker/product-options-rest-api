@@ -33,6 +33,7 @@
         <property name="value" type="string" description="A generic value for a property, often used in key-value pairs or translations."/>
         <property name="sku" type="string" description="The Stock Keeping Unit, a unique identifier for a concrete product."/>
         <property name="idProductOptionValue" type="int"/>
+        <property name="price" type="int"/>
     </transfer>
 
     <transfer name="ProductOptionGroupStorage">
@@ -118,6 +119,10 @@
 
     <transfer name="RestQuoteRequestsCart">
         <property name="items" type="RestQuoteRequestItem[]" singular="item" description="A collection of items, typically in a cart, order, or list."/>
+    </transfer>
+
+    <transfer name="Locale">
+        <property name="localeName" type="string"/>
     </transfer>
 
 </transfers>
